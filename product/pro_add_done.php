@@ -23,12 +23,12 @@ if(isset($_SESSION['login'])==false)
 <?php
 try
 {
-	$pro_name = $_POST['name'];
-	$pro_price = $_POST['price'];
-	$pro_gazou_name = $_POST['gazou_name'];
+	require_once('../common/common.php');
 
-	$pro_name = htmlspecialchars($pro_name);
-	$pro_price = htmlspecialchars($pro_price);
+	$post = sanitize($_POST);
+	$pro_name = $post['name'];
+	$pro_price = $post['price'];
+	$pro_gazou_name = $_POST['gazou_name'];
 
 	$dsn = 'mysql:dbname=shop;host=localhost';
 	$user = 'root';

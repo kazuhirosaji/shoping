@@ -23,11 +23,11 @@ if(isset($_SESSION['login'])==false)
 <?php
 try
 {
-	$staff_name = $_POST['name'];
-	$staff_pass = $_POST['pass'];
+	require_once('../common/common.php');
 
-	$staff_name = htmlspecialchars($staff_name);
-	$staff_pass = htmlspecialchars($staff_pass);
+	$post = sanitize($_POST);
+	$staff_name = $post['name'];
+	$staff_pass = $post['pass'];
 
 	$dsn = 'mysql:dbname=shop;host=localhost';
 	$user = 'root';

@@ -21,15 +21,14 @@ if(isset($_SESSION['login'])==false)
 </head>
 <body>
 <?php
+require_once('../common/common.php');
 
+$post = sanitize($_POST);
 $staff_code=$_POST['code'];
-$staff_name=$_POST['name'];
-$staff_pass=$_POST['pass'];
-$staff_pass2=$_POST['pass2'];
+$staff_name=$post['name'];
+$staff_pass=$post['pass'];
+$staff_pass2=$post['pass2'];
 
-$staff_name = htmlspecialchars($staff_name);
-$staff_pass = htmlspecialchars($staff_pass);
-$staff_pass2 = htmlspecialchars($staff_pass2);
 
 if($staff_name=='') {
 	print 'スタッフ名が入力されていません<br />';
