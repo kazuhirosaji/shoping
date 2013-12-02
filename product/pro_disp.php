@@ -68,6 +68,7 @@ catch (Exception $e)
 <br />
 <?php print $disp_gazou; ?><br/>
 <br />
+<form>
 <input type="button" onclick="history.back()" value="戻る">
 </form>
 </body>
